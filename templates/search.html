@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Cafés{% endblock %}
+
+{% block content %}
+<div class="container py-5 search-section">
+
+  {% if cafes %}
+    <h2 class="mb-4 text-coffee text-center">Cafés in {{ location.title() }}</h2>
+
+    <div class="row gy-4">
+      {% for cafe in cafes %}
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="card cafe-card w-100">
+          <img src="{{ cafe.img_url }}" class="card-img-top card-img-fixed" alt="Interior of {{ cafe.name }}">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ cafe.name }}</h5>
+            <h6 class="text-muted">{{ cafe.location }}</h6>
+            <a href="{{ cafe.map_url }}" target="_blank" class="card-link mb-2">View on Google Maps</a>
+            <p class="card-text mb-2">
+              ☕ {{ cafe.coffee_price }}<br>
+              💺 {{ cafe.seats }}
+            </p>
+            <p class="card-text">
+              {% if cafe.has_wifi %}<i class="fas fa-wifi me-2" title="Wi-Fi"></i>{% endif %}
+              {% if cafe.has_sockets %}<i class="fas fa-plug me-2" title="Power Sockets"></i>{% endif %}
+              {% if cafe.has_toilet %}<i class="fas fa-toilet me-2" title="Toilet"></i>{% endif %}
+              {% if cafe.can_take_calls %}<i class="fas fa-phone me-2" title="Quiet for Calls"></i>{% endif %}
+            </p>
+
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  {% else %}
+    <div class="text-center mt-5">
+      <h4 class="text-coffee">No cafés found in: <strong>{{ location.title() }}</strong></h4>
+      <p>Try a different location or <a href="{{ url_for('home') }}" class="btn btn-outline-dark mt-3">See all cafés</a></p>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
