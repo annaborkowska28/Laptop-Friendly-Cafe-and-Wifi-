@@ -1,69 +1,96 @@
 {% extends 'base.html' %}
 
-{% block title %}Cafe & Wifi{% endblock %}
+{% block title %}Cafe & Wifi — Find Your Focus{% endblock %}
 
 {% block content %}
-<!--HERO -->
-<section class="hero-banner d-flex align-items-center">
-  <div class="container text-center text-white">
-    <h1 class="display-4 fw-bold">Cafe & Wifi — Find Your Focus</h1>
-    <p class="lead mt-3">
-      This platform was created to help people find welcoming cafés where they can work remotely, recharge, and enjoy a little comfort while staying productive.
-    </p>
-    <a href="#cafes" class="btn btn-light mt-4">Explore Cafés</a>
-  </div>
-</section>
 
-<!--FEATURES -->
-<section class="features py-5 bg-light">
+<!-- HERO -->
+
+<section class="hero-banner text-start">
   <div class="container">
-    <div class="row text-center g-4">
-      <div class="col-md-4">
-        <i class="fas fa-wifi fa-2x mb-3 text-coffee"></i>
-        <h5>Reliable Wi-Fi</h5>
-        <p>Stay online and productive while sipping your brew.</p>
-      </div>
-      <div class="col-md-4">
-        <i class="fas fa-plug fa-2x mb-3 text-coffee"></i>
-        <h5>Power Sockets</h5>
-        <p>Charge your devices and keep working without interruption.</p>
-      </div>
-      <div class="col-md-4">
-        <i class="fas fa-mug-hot fa-2x mb-3 text-coffee"></i>
-        <h5>Cozy Vibes</h5>
-        <p>Peaceful ambiance to inspire creativity and comfort.</p>
+    <div class="row align-items-center">
+      <div class="col-lg-6 text-start text-white">
+        <h1 class="display-1 fw-bold mb-4">Find Your Perfect Café</h1>
+        <p class="lead mb-4">Work, relax, and recharge in laptop-friendly spaces across the city.</p>
+        <a class="btn btn-outline-light" href="#cafes">Explore our cafés</a>
       </div>
     </div>
   </div>
 </section>
 
-<!--  CAFE LISTINGS -->
+
+<!-- ABOUT PANEL -->
+<section id="about" class="about-panel py-5 bg-panel">
+  <div class="container">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6">
+        <img src="/static/cafe_esp.jpg" alt="Cafe" class="img-fluid rounded shadow-lg animate-zoom">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-3">Why Cafe & Wifi?</h2>
+        <p class="lead mb-4">
+          This platform helps remote workers and creatives discover cozy cafés with reliable Wi-Fi, accessible sockets, and warm ambiance — because productivity should feel good.
+        </p>
+        <a href="/about" class="btn btn-outline-dark">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE CARDS -->
+<section class="features py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-5">What Matters Most</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-box p-4 shadow-sm rounded animate-pop">
+          <i class="fas fa-wifi fa-2x mb-3 text-coffee"></i>
+          <h5>Reliable Wi-Fi</h5>
+          <p>Stay connected and productive while sipping your brew.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box p-4 shadow-sm rounded animate-pop">
+          <i class="fas fa-plug fa-2x mb-3 text-coffee"></i>
+          <h5>Power Sockets</h5>
+          <p>Charge your creativity — and your laptop — with ease.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box p-4 shadow-sm rounded animate-pop">
+          <i class="fas fa-mug-hot fa-2x mb-3 text-coffee"></i>
+          <h5>Cozy Vibes</h5>
+          <p>Recharge in a space that feels just like home.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAFÉ LISTINGS -->
 <section id="cafes" class="py-5 bg-light">
   <div class="container">
+    <h2 class="text-center fw-bold mb-5">Find Your Spot</h2>
     <div class="row gy-4">
-      {% for row in all_cafes %}
-        {% for cafe in row %}
-        <div class="col-md-6 col-lg-4 d-flex">
+      {% for cafe in all_cafes %}
+        <div class="col-md-6 col-lg-4 d-flex animate-fade">
           <div class="card cafe-card w-100">
-            <img src="{{ cafe.img_url }}" class="card-img-top card-img-fixed" alt="Interior of {{ cafe.name }}">
+            <img src="{{ cafe.img_url }}" class="card-img-top card-img-fixed" alt="{{ cafe.name }}">
             <div class="card-body d-flex flex-column">
+
               <h5 class="card-title">{{ cafe.name }}</h5>
               <h6 class="text-muted">{{ cafe.location }}</h6>
               <a href="{{ cafe.map_url }}" target="_blank" class="card-link mb-2">View on Google Maps</a>
-              <p class="card-text mb-2">
-                ☕ {{ cafe.coffee_price }}<br> 💺 {{ cafe.seats }}
-              </p>
-              <p class="card-text">
+              <p class="card-text mb-2">☕ {{ cafe.coffee_price }}<br> 💺 {{ cafe.seats }}</p>
+              <p class="card-text mt-auto">
                 {% if cafe.has_wifi %}<i class="fas fa-wifi me-2" title="Wi-Fi"></i>{% endif %}
                 {% if cafe.has_sockets %}<i class="fas fa-plug me-2" title="Sockets"></i>{% endif %}
                 {% if cafe.has_toilet %}<i class="fas fa-toilet me-2" title="Toilet"></i>{% endif %}
                 {% if cafe.can_take_calls %}<i class="fas fa-phone me-2" title="Calls"></i>{% endif %}
               </p>
-
             </div>
           </div>
         </div>
-        {% endfor %}
       {% endfor %}
     </div>
   </div>
@@ -71,6 +98,7 @@
 
 <!-- BACK TO TOP -->
 <div class="text-center mt-5 mb-5">
-  <a href="#" class="btn btn-primary"><i class="fas fa-arrow-up"></i> Back to top</a>
+  <a href="#" class="btn btn-outline-dark"><i class="fas fa-arrow-up"></i> Back to top</a>
 </div>
+
 {% endblock %}

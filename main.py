@@ -49,15 +49,16 @@ def home():
     for i, cafe in enumerate(all_cafes):
         cafe.ranking = len(all_cafes) - i
 
-    grouped_cafes = [all_cafes[i:i+3] for i in range(0, len(all_cafes), 3)]
-    return render_template("index.html", all_cafes=grouped_cafes)
+    return render_template("index.html", all_cafes=all_cafes)
+
+
 
 @app.route('/search')
 def search():
     location = request.args.get('location', '').strip().lower()
     if not location:
         return redirect(url_for('home'))
-    cafes = Cafe.query.filter(Cafe.location.ilike(f'%{location}%')).all()
+    cafes = Cafe.query.filter(Cafe.location.ilike(f'%{location}%'))
     return render_template('search.html', cafes=cafes, location=location)
 
 
