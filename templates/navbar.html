@@ -1,28 +1,40 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid"> <!-- używamy container-fluid dla pełnej szerokości -->
-    <a class="navbar-brand d-flex align-items-center" href="/">
-      <img src="{{ url_for('static', filename='logo_cafe.png') }}" alt="Logo" class="logo-inline">
-      <span class="site-title ms-2 text-white">Cafe & Wifi</span>
+  <div class="container-fluid px-4">
+
+    <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="/">
+      <img src="{{ url_for('static', filename='logo_cafe.png') }}" alt="Logo"
+           class="logo-inline me-2" />
+      Café Finder
     </a>
 
+    <!--Hamburger button -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav"
+            data-bs-target="#mainNavbar" aria-controls="mainNavbar"
             aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <div class="ms-auto d-flex align-items-center flex-wrap"> <!-- wyrównanie nawigacji do prawej -->
-        <ul class="navbar-nav me-3">
-          <li class="nav-item"><a class="nav-link text-white fs-5 nav-link-tight" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white fs-5 nav-link-tight" href="#cafes">Cafés</a></li>
-          <li class="nav-item"><a class="nav-link text-white fs-5 nav-link-tight" href="/contact">Contact</a></li>
-        </ul>
-        <form class="d-flex" method="GET" action="/search">
-          <input class="form-control me-2" type="search" name="location" placeholder="Search cafés…" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
-      </div>
+    <!-- Collapsing nav + search -->
+    <div class="collapse navbar-collapse bg-dark py-3 text-white" id="mainNavbar">
+      <!-- NAV LINKS -->
+      <ul class="navbar-nav gap-3 ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cafes">Cafés</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+
+      <!--SEARCH -->
+      <form class="d-flex ms-lg-3 mt-3 mt-lg-0" role="search">
+        <input class="form-control me-2 bg-dark text-white border-light"
+               type="search" placeholder="Search cafés..." aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
     </div>
   </div>
 </nav>
