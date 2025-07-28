@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Boolean
@@ -90,9 +90,18 @@ def add_cafe():
         db.session.add(new_cafe)
         db.session.commit()
         db.session.close_all()
+        flash("Successfully added new café!", "success")
         return redirect(url_for("home"))
     return render_template("add.html")
 
+@app.route('/delete')
+
+def delete():
+    cafe_id = request.args.get('id')
+    cafe_to_delete = db.get_or_404(Cafe, cafe_id)
+    db.session.delete(cafe_to_delete)
+    db.session.commit()
+    return redirect(url_for('home'))
 
 
 
