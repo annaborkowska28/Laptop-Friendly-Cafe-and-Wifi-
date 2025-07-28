@@ -12,7 +12,7 @@
 /* === GLOBAL === */
 body {
   background-color: #fffaf5;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Quicksand', sans-serif;
   color: var(--text-dark);
 }
 
@@ -43,8 +43,9 @@ h2, h3, h4 {
   display: flex;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  z-index: 1000;
 }
+
 
 .logo-contained,
 .logo-inline {
@@ -124,10 +125,6 @@ h2, h3, h4 {
     margin-top: 0.5rem;
   }
 }
-
-
-
-
 
 
 /* === HERO === */
@@ -285,7 +282,6 @@ background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
 /* === hero buttons === */
 
 
-
 .btn-accent {
   background-color: #d17721;
   color: white;
@@ -308,9 +304,7 @@ background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
   color: #d17721;
 }
 
-.border-accent {
-  border-color: #d17721;
-}
+
 
 .btn-text-accent {
   background-color: white;
@@ -352,7 +346,6 @@ background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
 
 
 .btn-style.border-btn {
-  border: 2px solid #c89b6d;
   color: #c89b6d;
   background-color: transparent;
   padding: 12px 30px;
@@ -517,5 +510,55 @@ background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+#about ul.list-unstyled li {
+  margin-bottom: 1rem;
+}
+
+
+#about {
+    background: linear-gradient(to bottom, #fef7e5, #f7f3ee);}
+
+.btn-outline-warning {
+  background-color: orange;
+  color: white;
+  border: 2px solid orange;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-warning:hover {
+  background-color: white;
+  color: orange;
+  border: 2px solid orange;
+}
+
+/* reviews section */
+#reviews {
+  border-top: 2px solid orange;
+}
+
+#footer {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  #reviews .p-4 {
+    transition: transform 0.3s ease;
+  }
+
+  #reviews .p-4:hover {
+    transform: scale(1.03);
+  }
+}
+
+.about-page .navbar {
+  background-color: rgba(255, 248, 240, 0.95);
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease;
+}
+
+.about-page .navbar .nav-link {
+  color: #555;
 }
 

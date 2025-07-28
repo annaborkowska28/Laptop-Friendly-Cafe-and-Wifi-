@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute top-0 start-0 w-100 px-4 py-3">
-  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
 
     <!-- Logo and title -->
     <div class="d-flex align-items-center">
@@ -20,7 +20,7 @@
         <div class="navbar-nav">
             <a href="{{ url_for('add_cafe') }}" class="nav-link">Add Cafe</a>
               <a href="#cafes" class="nav-link">Cafés</a>
-              <a href="#about" class="nav-link">About</a>
+              <a href="{{ url_for('about') }}" class="nav-link">About</a>
               <a href="#contact" class="nav-link">Contact</a>
         </div>
 

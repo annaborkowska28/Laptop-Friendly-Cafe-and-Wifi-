@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}About Cafe & Wifi{% endblock %}
+
+{% block content %}
+
+<section id="about" class="py-5 bg-light">
+
+
+  <div class="container">
+    <div class="row align-items-center">
+
+
+
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="{{ url_for('static', filename='cafe-image.jpg') }}" alt="Cafe interior" class="img-fluid rounded shadow">
+      </div>
+
+      <div class="col-lg-6">
+        <h2 class="text-uppercase mb-4" style="color: orange;">About Cafe & Wifi</h2>
+        <p class="text-muted">
+  I created Cafe&Wifi as part of my portfolio to showcase both design and purpose. While working on this project,
+          I was also immersing myself in the world of software testing — learning how to build, evaluate,
+          and fine-tune digital experiences.
+          Mapping out cozy cafés that offer great coffee and a comfortable space to get work done
+          became the perfect way to combine my growing tech skills
+          with a passion for discovering inspiring places that foster creativity and productivity.
+</p>
+
+<p class="text-muted">
+  These spaces are designed with laptop lovers, thinkers, dreamers, and caffeine enthusiasts in mind —
+  wherever they may be. Whether you're deep in debugging code, writing a thesis, or sketching out your next big idea,
+  cozy cafés around the world offer the ideal blend of inspiration, coffee, and connection, making them perfect
+  for remote work, study, or a well-deserved break.
+</p>
+
+        <ul class="list-unstyled mt-5">
+          <li><i class="fas fa-mug-hot me-2" style="color: orange;"></i> Specialty coffee blends</li>
+          <li><i class="fas fa-wifi me-2" style="color: orange;"></i> Free high-speed WiFi</li>
+          <li><i class="fas fa-laptop me-2" style="color: orange;"></i> Work-friendly tables</li>
+          <li><i class="fas fa-smile me-2" style="color: orange;"></i> Cozy, welcoming atmosphere</li>
+        </ul>
+        <p class="mt-4">
+  <a href="{{ url_for('home') }}#cafes" class="btn btn-outline-warning text-uppercase fw-bold">
+    Discover your next favorite café
+  </a>
+</p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<section id="reviews" class="py-5" style="background-color: #fff8f0;">
+  <div class="container">
+    <h2 class="text-center mb-5" style="color: orange;">What People Are Saying</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="p-4 border rounded shadow-sm bg-white h-100">
+          <p class="mb-3 fst-italic text-muted">“This site helped me find the coziest spot to finish my thesis with top-notch espresso — love it!”</p>
+          <p class="fw-bold text-end">— Kasia, student</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 border rounded shadow-sm bg-white h-100">
+          <p class="mb-3 fst-italic text-muted">“Cafe&Wifi is like a map for my freelance life. Great vibes, great coffee, great WiFi!”</p>
+          <p class="fw-bold text-end">— Mateusz, UX designer</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 border rounded shadow-sm bg-white h-100">
+          <p class="mb-3 fst-italic text-muted">“I’m learning software testing and these cafés are perfect for bootcamp homework. Quiet + lattes = heaven.”</p>
+          <p class="fw-bold text-end">— Ola, aspiring QA tester</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
