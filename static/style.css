@@ -385,3 +385,106 @@ background: linear-gradient(to right, #fff3e7, #ecdfd2);
 }
 
 
+/* === ADD CAFE SECTION === */
+.add-cafe-wrapper {
+  background: linear-gradient(to right, #fff3e7, #fdf0e3);
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  margin-bottom: 40px;
+}
+
+.add-cafe-heading {
+  font-size: 2.4rem;
+  color: var(--coffee-dark);
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-cafe-form {
+  max-width: 760px;
+  margin: 0 auto;
+  background-color: #fffaf3;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.add-cafe-form label {
+  font-weight: 600;
+  color: var(--coffee-dark);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.add-cafe-form input,
+.add-cafe-form textarea,
+.add-cafe-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #dcb083;
+  background-color: #fef7e5;
+  color: var(--text-dark);
+  font-family: 'Manrope', sans-serif;
+  margin-bottom: 20px;
+}
+
+.add-cafe-form input:focus,
+.add-cafe-form textarea:focus,
+.add-cafe-form select:focus {
+  outline: none;
+  border-color: var(--coffee-accent);
+  box-shadow: 0 0 0 3px rgba(169, 116, 84, 0.2);
+}
+
+.add-cafe-form .submit-btn {
+  background-color: var(--coffee-accent);
+  color: white;
+  padding: 12px 24px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-cafe-form .submit-btn:hover {
+  background-color: var(--coffee-hover);
+}
+
+/* custom checkboxes */
+.add-cafe-form .form-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.add-cafe-form .form-check-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #fef7e5;
+  border: 2px solid var(--coffee-gold);
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.add-cafe-form .form-check-input:checked {
+  background-color: var(--coffee-accent);
+  border-color: var(--coffee-accent);
+}
+
+.add-cafe-form .form-check-input:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}

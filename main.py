@@ -62,6 +62,36 @@ def search():
     return render_template('search.html', cafes=cafes, location=location)
 
 
+#------------------------- ADD NEW CAFE ----------------------------------------
+@app.route("/add", methods=["GET", "POST"])
+def add_cafe():
+    if request.method == 'POST':
+        cafe_name = request.form['name']
+        map_url = request.form['map_url']
+        img_url = request.form['img_url']
+        location = request.form['location']
+        has_sockets = int(request.form['has_sockets'])
+        has_toilet = int(request.form['has_toilet'])
+        has_wifi = int(request.form['has_wifi'])
+        can_take_calls = int(request.form['can_take_calls'])
+        seats = request.form['seats']
+        coffee_price = request.form['coffee_price']
+        new_cafe = Cafe(name=cafe_name,
+                        map_url=map_url,
+                        img_url=img_url,
+                        location=location,
+                        has_sockets=has_sockets,
+                        has_toilet=has_toilet,
+                        has_wifi=has_wifi,
+                        can_take_calls=can_take_calls,
+                        seats=seats,
+                        coffee_price=coffee_price)
+        db.session.add(new_cafe)
+        db.session.commit()
+        db.session.close_all()
+        return redirect(url_for("home"))
+    return render_template("add.html")
+
 
 
 
