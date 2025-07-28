@@ -5,17 +5,21 @@
   --coffee-hover: #8c5a3a;
   --coffee-gold: #dcb083;
   --text-dark: #2f2f2f;
+  --color-accent: #d17721;
+}
+
+
 }
 
 /* === GLOBAL === */
 body {
   background-color: #fffaf5;
-  font-family: 'Nunito', sans-serif;
+    font-family: 'Manrope', sans-serif;
   color: var(--text-dark);
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Poppins', sans-serif;
+h2, h3, h4 {
+    font-family: 'Manrope', sans-serif;
   color: var(--coffee-dark);
 }
 
@@ -23,6 +27,14 @@ h1, h2, h3, h4 {
   color: var(--text-dark);
   }
 
+
+/* site title */
+.site-title{
+    font-family: 'Manrope', sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    color: white;
+}
 
 
 /* === NAVBAR === */
@@ -45,21 +57,20 @@ h1, h2, h3, h4 {
   filter: brightness(0) invert(1);
 }
 
-.site-title {
-  font-size: 45px;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  color: white;
-}
+
 
 .navbar-nav {
   display: flex;
   align-items: center;
+   gap: 1rem;
+
 }
 
 .nav-link {
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-family: 'Manrope', sans-serif;
+
+  font-size: 1.3rem;
+  font-weight: 400;
   color: white;
   margin-left: 1.5rem;
   transition: color 0.3s ease;
@@ -70,6 +81,8 @@ h1, h2, h3, h4 {
 }
 
 .form-control {
+  font-family: 'Manrope', sans-serif;
+
   border-radius: 8px;
   background-color: #2c2c2c;
   color: white;
@@ -81,36 +94,47 @@ h1, h2, h3, h4 {
 }
 
 .btn-outline-light {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+
   border-radius: 8px;
-  font-weight: 500;
+  font-weight: 400;
   border-color: #fff;
 }
 
-.logo-inline {
-  max-height: 60px;
-  width: auto;
-}
 
-.navbar-nav {
-  gap: 1rem;
-}
+
+
 
 @media (max-width: 991.98px) {
   .navbar-collapse {
+    background-color: rgba(28, 28, 28, 0.95);
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
+     padding-top: 1rem;
+    padding-bottom: 1rem
   }
 
-  .navbar .form-control {
+
+
+  .form-control,
+  .btn-outline-light {
+    width: 100%;
     margin-top: 0.5rem;
   }
 }
 
 
 
+
+
+
 /* === HERO === */
 .hero-banner {
-  background-image: url("/static/cafe.jpg");
+  background-image: url("/static/cafe_hero.png");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -126,18 +150,14 @@ h1, h2, h3, h4 {
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-
 .hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
+  padding-left: 7rem; /
+  padding-right: 1rem;
+  max-width: 960px;
 }
 
-.hero-content .container {
-  max-width: 960px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
+
+
 
 .hero-content h1 {
   font-size: 4rem;
@@ -188,7 +208,6 @@ h1, h2, h3, h4 {
 
 /* === CAFE CARDS === */
 .cafe-card {
-  background-color: var(--coffee-light);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -222,22 +241,147 @@ h1, h2, h3, h4 {
 
 /* === FEATURES SECTION === */
 .features {
-  background: linear-gradient(to right, #fff9f0, #f2eae2);
+background: linear-gradient(to right, #fff3e7, #ecdfd2);
   color: var(--text-dark);
 }
 
 /* ==== ABOUT PANEL === */
-.about-panel {
-  color: var(--text-dark);
-  padding: 60px 20px;
+.about-section {
+  background-color: #f7f3ee;
+  padding: 60px 0;
+}
+
+.about-content {
+  padding: 40px 0;
+}
+
+.about-description p {
+  color: #5c4b3b;
   line-height: 1.6;
 }
 
-.about-panel .lead {
-  font-size: 1.1rem;
+.image-box img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.about-panel img {
-  transition: transform 0.5s ease;
+.features-section {
+  background: linear-gradient(to right, #fff9f0, #f2eae2);
+  color: var(--text-dark);
 }
+
+/* === hero buttons === */
+
+
+
+.btn-accent {
+  background-color: #d17721;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: white;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+
+.text-accent {
+  color: #d17721;
+}
+
+.border-accent {
+  border-color: #d17721;
+}
+
+.btn-text-accent {
+  background-color: white;
+  color: #d17721;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-outline-accent:hover {
+  color: #b46d3b;
+  background-color: #fff5ec;
+}
+
+
+
+/* Headers */
+.title-small {
+  font-size: 1.1rem;
+  color: #c89b6d; /* kawowy brąz */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title-big {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #3e2c23; /* głęboki brąz */
+}
+
+/* Akapit */
+.about-right-faq p {
+  color: #5c4b3b;
+  line-height: 1.6;
+}
+
+
+.btn-style.border-btn {
+  border: 2px solid #c89b6d;
+  color: #c89b6d;
+  background-color: transparent;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-style.border-btn:hover {
+  background-color: #c89b6d;
+  color: white;
+}
+
+
+.left-wthree-img img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Know More – outline + hover */
+.btn-outline-accent {
+  background-color: white;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-accent:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.btn-text-accent:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
 
