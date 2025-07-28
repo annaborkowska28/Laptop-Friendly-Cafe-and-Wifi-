@@ -78,7 +78,6 @@
 
 
 <!-- RECENTLY ADDED -->
-
 <section id="recently-added" class="search-section">
   <div class="container">
     <h2 class="title-big">Recently Added Cafés</h2>
@@ -122,7 +121,7 @@
                 {% if cafe.has_toilet %}<i class="fas fa-toilet me-2" title="Toilet"></i>{% endif %}
                 {% if cafe.can_take_calls %}<i class="fas fa-phone me-2" title="Calls"></i>{% endif %}
               </p>
-                              <a href="{{ url_for('delete', id=cafe.id) }}" class="btn btn-delete btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
+              <a href="{{ url_for('delete', id=cafe.id) }}" class="btn btn-delete btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
 
             </div>
           </div>

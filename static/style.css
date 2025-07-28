@@ -17,7 +17,7 @@ body {
 }
 
 h2, h3, h4 {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Quicksand', sans-serif;
   color: var(--coffee-dark);
 }
 
@@ -28,7 +28,7 @@ h2, h3, h4 {
 
 /* site title */
 .site-title{
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 55px;
     font-weight: 500;
     color: white;
@@ -135,14 +135,16 @@ h2, h3, h4 {
   background-image: url("/static/cafe_hero.png");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: 80vh;
   position: relative;
   display: flex;
   align-items: center;
   padding-top: 120px;
+  overflow: hidden;
 }
 
 .hero-overlay {
+  min-height: 80vh;
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -497,3 +499,23 @@ background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
   font-size: 14px;
   font-family: Arial, sans-serif;
 }
+
+.add-cafe-message {
+  background-color: #fff6ea;
+  border: 1px solid var(--coffee-gold);
+  color: var(--coffee-dark);
+  padding: 16px 24px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  font-family: 'Manrope', sans-serif;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

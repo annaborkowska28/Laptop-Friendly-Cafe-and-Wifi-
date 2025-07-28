@@ -91,16 +91,17 @@ def add_cafe():
         db.session.commit()
         db.session.close_all()
         flash("Successfully added new café!", "success")
-        return redirect(url_for("home"))
+        return redirect(url_for("add_cafe"))
     return render_template("add.html")
 
 @app.route('/delete')
-
 def delete():
     cafe_id = request.args.get('id')
     cafe_to_delete = db.get_or_404(Cafe, cafe_id)
     db.session.delete(cafe_to_delete)
     db.session.commit()
+    flash("Successfully deleted!", "success")
+
     return redirect(url_for('home'))
 
 
