@@ -5,42 +5,53 @@
 {% block content %}
 
 <!-- HERO -->
+<header class="hero-banner position-relative">
 
-<section class="hero-banner text-start">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 text-start text-white">
-        <h1 class="display-1 fw-bold mb-4">Find Your Perfect Café</h1>
-        <p class="lead mb-4">Work, relax, and recharge in laptop-friendly spaces across the city.</p>
-        <a class="btn btn-outline-light" href="#cafes">Explore our cafés</a>
-      </div>
+    {% include 'navbar.html' %}
+
+<div class="hero-overlay d-flex align-items-center text-white" style="min-height: 100vh;">
+  <div class="hero-content text-start">
+    <h1 class="display-1 fw-bold mb-4">Find Your Perfect Café</h1>
+    <p class="lead mb-4">Work, relax, and recharge in laptop-friendly spaces across the city.</p>
+    <div class="d-flex flex-wrap gap-3">
+      <a class="btn-accent" href="#cafes">Explore Our Cafés</a>
+      <a class="btn-outline-accent" href="#about">About Us</a>
     </div>
   </div>
-</section>
+</div>
+
+
+</header>
 
 
 <!-- ABOUT PANEL -->
-<section id="about" class="about-panel py-5 bg-panel">
-  <div class="container">
-    <div class="row gx-5 align-items-center">
-      <div class="col-lg-6">
-        <img src="/static/cafe_esp.jpg" alt="Cafe" class="img-fluid rounded shadow-lg animate-zoom">
-      </div>
-      <div class="col-lg-6">
-        <h2 class="fw-bold mb-3">Why Cafe & Wifi?</h2>
-        <p class="lead mb-4">
-          This platform helps remote workers and creatives discover cozy cafés with reliable Wi-Fi, accessible sockets, and warm ambiance — because productivity should feel good.
-        </p>
-        <a href="/about" class="btn btn-outline-dark">Learn More</a>
+<section class="about-section" id="bottom">
+  <div class="about-content py-5">
+    <div class="container py-lg-1 py-md-2">
+      <div class="row">
+        <div class="col-lg-6 about-description align-self">
+          <h5 class="title-small mb-3">What We Do Best</h5>
+          <h3 class="title-big">Why Café & Wifi?</h3>
+          <p class="mt-4">We believe productivity thrives where comfort meets connection.
+            Café & Wifi was born from the simple idea that good work deserves great surroundings — places with strong coffee, reliable outlets,
+            and even more reliable Wi-Fi. Our platform helps creators, students, and freelancers find spots that spark inspiration and support focus.
+          </p>
+          <a href="#about" class="btn-outline-accent">Know More</a>
+        </div>
+        <div class="col-lg-6 image-box text-right mt-lg-0 mt-5">
+          <img src="static/about.jpg" alt="" class="radius-image img-fluid">
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- FEATURE CARDS -->
 <section class="features py-5 bg-light text-center">
   <div class="container">
-    <h2 class="fw-bold mb-5">What Matters Most</h2>
+    <h2 class="title-big">What Matters Most</h2>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="feature-box p-4 shadow-sm rounded animate-pop">
@@ -70,7 +81,7 @@
 <!-- CAFÉ LISTINGS -->
 <section id="cafes" class="py-5 bg-light">
   <div class="container">
-    <h2 class="text-center fw-bold mb-5">Find Your Spot</h2>
+    <h2 class="title-big text-center mb-5">Find Your Spot</h2>
     <div class="row gy-4">
       {% for cafe in all_cafes %}
         <div class="col-md-6 col-lg-4 d-flex animate-fade">
