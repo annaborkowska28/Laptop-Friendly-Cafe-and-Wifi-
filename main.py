@@ -45,11 +45,12 @@ class Cafe(db.Model):
 @app.route("/")
 def home():
     all_cafes = Cafe.query.order_by(Cafe.id).all()
-
+    recent_cafes = Cafe.query.order_by(Cafe.id.desc()).limit(3).all()
     for i, cafe in enumerate(all_cafes):
         cafe.ranking = len(all_cafes) - i
 
-    return render_template("index.html", all_cafes=all_cafes)
+
+    return render_template("index.html", all_cafes=all_cafes, recent_cafes=recent_cafes)
 
 
 

@@ -9,8 +9,6 @@
 }
 
 
-}
-
 /* === GLOBAL === */
 body {
   background-color: #fffaf5;
@@ -32,7 +30,7 @@ h2, h3, h4 {
 .site-title{
     font-family: 'Manrope', sans-serif;
     font-size: 55px;
-    font-weight: 700;
+    font-weight: 500;
     color: white;
 }
 
@@ -203,7 +201,8 @@ h2, h3, h4 {
   font-weight: 600;
   font-size: 2rem;
   margin-bottom: 30px;
-  color: var(--coffee-dark);
+  color: var(--coffee-dark) !important;
+
 }
 
 /* === CAFE CARDS === */
@@ -241,9 +240,14 @@ h2, h3, h4 {
 
 /* === FEATURES SECTION === */
 .features {
-background: linear-gradient(to right, #fff3e7, #ecdfd2);
+background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
   color: var(--text-dark);
 }
+
+.feature-box {
+  min-height: 200px;
+}
+
 
 /* ==== ABOUT PANEL === */
 .about-section {
@@ -266,8 +270,8 @@ background: linear-gradient(to right, #fff3e7, #ecdfd2);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.features-section {
-  background: linear-gradient(to right, #fff9f0, #f2eae2);
+.features {
+background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
   color: var(--text-dark);
 }
 

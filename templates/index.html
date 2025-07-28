@@ -46,15 +46,13 @@
   </div>
 </section>
 
-
-
 <!-- FEATURE CARDS -->
 <section class="features py-5 bg-light text-center">
   <div class="container">
     <h2 class="title-big">What Matters Most</h2>
-    <div class="row g-4">
+    <div class="row g-4 align-items-stretch">
       <div class="col-md-4">
-        <div class="feature-box p-4 shadow-sm rounded animate-pop">
+        <div class="feature-box p-4 shadow-sm rounded animate-pop w-100">
           <i class="fas fa-wifi fa-2x mb-3 text-coffee"></i>
           <h5>Reliable Wi-Fi</h5>
           <p>Stay connected and productive while sipping your brew.</p>
@@ -78,10 +76,35 @@
   </div>
 </section>
 
-<!-- CAFÉ LISTINGS -->
-<section id="cafes" class="py-5 bg-light">
+
+<!-- RECENTLY ADDED -->
+
+<section id="recently-added" class="search-section">
   <div class="container">
-    <h2 class="title-big text-center mb-5">Find Your Spot</h2>
+    <h2 class="title-big">Recently Added Cafés</h2>
+    <div class="row">
+      {% for cafe in recent_cafes %}
+        <div class="col-md-4">
+          <div class="cafe-card">
+            <img src="{{ cafe.img_url }}" alt="{{ cafe.name }}" class="card-img-fixed">
+            <div class="card-body">
+              <h5>{{ cafe.name }}</h5>
+              <p>{{ cafe.location }}</p>
+              <a href="{{ cafe.map_url }}" class="btn btn-outline-accent" target="_blank">View on Map</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CAFÉ LISTINGS -->
+<section id="cafes" class="search-section" py-5>
+  <div class="container">
+    <h2 class="title-big">Find Your Spot</h2>
     <div class="row gy-4">
       {% for cafe in all_cafes %}
         <div class="col-md-6 col-lg-4 d-flex animate-fade">
