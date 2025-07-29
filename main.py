@@ -59,7 +59,7 @@ def search():
     location = request.args.get('location', '').strip().lower()
     if not location:
         return redirect(url_for('home'))
-    cafes = Cafe.query.filter(Cafe.location.ilike(f'%{location}%'))
+    cafes = Cafe.query.filter(Cafe.location.ilike(f'%{location}%')).all()
     return render_template('search.html', cafes=cafes, location=location)
 
 
@@ -93,6 +93,35 @@ def add_cafe():
         flash("Successfully added new café!", "success")
         return redirect(url_for("add_cafe"))
     return render_template("add.html")
+
+
+
+@app.route('/edit', methods=["GET", "POST"])
+def edit():
+    if request.method == "POST":
+        try:
+            cafe_id = request.form['id']
+            cafe_to_update = db.get_or_404(Cafe, cafe_id)
+            cafe_to_update.name = request.form['name']
+            cafe_to_update.map_url = request.form['map_url']
+            cafe_to_update.img_url = request.form['img_url']
+            cafe_to_update.location = request.form['location']
+            cafe_to_update.has_sockets = int(request.form['has_sockets'])
+            cafe_to_update.has_toilet = int(request.form['has_toilet'])
+            cafe_to_update.has_wifi = int(request.form['has_wifi'])
+            cafe_to_update.can_take_calls = int(request.form['can_take_calls'])
+            cafe_to_update.seats = request.form['seats']
+            cafe_to_update.coffee_price = request.form['coffee_price']
+            db.session.commit()
+            return redirect(url_for('home'))
+        except KeyError as e:
+            flash(f"Missing form field: {e}")
+            return redirect(url_for('edit', id=request.form['id']))
+    cafe_id = request.args.get('id')
+    cafe_selected = db.get_or_404(Cafe, cafe_id)
+
+    return render_template('edit.html', cafe=cafe_selected)
+
 
 @app.route('/delete')
 def delete():

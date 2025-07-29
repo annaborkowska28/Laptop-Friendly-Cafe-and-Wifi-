@@ -36,7 +36,7 @@
             Café & Wifi was born from the simple idea that good work deserves great surroundings — places with strong coffee, reliable outlets,
             and even more reliable Wi-Fi. Our platform helps creators, students, and freelancers find spots that spark inspiration and support focus.
           </p>
-          <a href="#about" class="btn-outline-accent">Know More</a>
+          <a href="{{ url_for('about') }}" class="btn-outline-accent">Know More</a>
         </div>
         <div class="col-lg-6 image-box text-right mt-lg-0 mt-5">
           <img src="static/about.jpg" alt="" class="radius-image img-fluid">
@@ -101,7 +101,7 @@
 
 
 <!-- CAFÉ LISTINGS -->
-<section id="cafes" class="search-section" py-5>
+<section id="cafes" class="search-section">
   <div class="container">
     <h2 class="title-big">Find Your Spot</h2>
     <div class="row gy-4">
@@ -122,6 +122,8 @@
                 {% if cafe.can_take_calls %}<i class="fas fa-phone me-2" title="Calls"></i>{% endif %}
               </p>
               <a href="{{ url_for('delete', id=cafe.id) }}" class="btn btn-delete btn-sm"><i class="fas fa-trash-alt"></i> Delete</a>
+              <a href="{{ url_for('edit', id=cafe.id) }}" class="btn btn-edit btn-sm"><i class="fas fa-edit"></i> Edit</a>
+
 
             </div>
           </div>
