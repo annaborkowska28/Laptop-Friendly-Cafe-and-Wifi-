@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, get_flashed_messages
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Boolean
@@ -113,12 +113,16 @@ def edit():
             cafe_to_update.seats = request.form['seats']
             cafe_to_update.coffee_price = request.form['coffee_price']
             db.session.commit()
-            return redirect(url_for('home'))
+            flash("Cafe successfully updated!")
+            return redirect(url_for('edit', id=cafe_id))
+
         except KeyError as e:
             flash(f"Missing form field: {e}")
             return redirect(url_for('edit', id=request.form['id']))
     cafe_id = request.args.get('id')
     cafe_selected = db.get_or_404(Cafe, cafe_id)
+    flash("Cafe successfully updated!", "success")
+
 
     return render_template('edit.html', cafe=cafe_selected)
 
