@@ -37,7 +37,7 @@
   {% else %}
     <div class="text-center mt-5">
       <h4 class="text-coffee">No cafés found in: <strong>{{ location.title() }}</strong></h4>
-      <p>Try a different location or <a href="{{ url_for('home') }}" class="btn btn-outline-dark mt-3">See all cafés</a></p>
+      <p>Try a different location or <a href="{{ url_for('home') }}#cafes" class="btn btn-outline-dark mt-3">See all cafés</a></p>
     </div>
   {% endif %}
 </div>
