@@ -327,7 +327,7 @@ background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
 /* Headers */
 .title-small {
   font-size: 1.1rem;
-  color: #c89b6d; /* kawowy brąz */
+  color: #c89b6d;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -335,7 +335,7 @@ background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
 .title-big {
   font-size: 2.2rem;
   font-weight: 700;
-  color: #3e2c23; /* głęboki brąz */
+  color: #3e2c23;
 }
 
 /* Akapit */
@@ -552,13 +552,32 @@ background: linear-gradient(to bottom, #fef7e5, #f7f3ee);
   }
 }
 
-.about-page .navbar {
-  background-color: rgba(255, 248, 240, 0.95);
-  backdrop-filter: blur(4px);
-  transition: background-color 0.3s ease;
+
+/*edit section*/
+
+.edit-cafe-wrapper {
+  background: linear-gradient(to right, #fff3e7, #fdf0e3);
+  padding: 60px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  margin-bottom: 40px;
 }
 
-.about-page .navbar .nav-link {
-  color: #555;
+.cafe-image-wrapper {
+  background-color: #fffaf3;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
+.cafe-image-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
