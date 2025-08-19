@@ -113,7 +113,7 @@ def edit():
             cafe_to_update.seats = request.form['seats']
             cafe_to_update.coffee_price = request.form['coffee_price']
             db.session.commit()
-            flash("Cafe successfully updated!")
+            flash("Cafe successfully updated!", "success")
             return redirect(url_for('edit', id=cafe_id))
 
         except KeyError as e:
@@ -121,7 +121,6 @@ def edit():
             return redirect(url_for('edit', id=request.form['id']))
     cafe_id = request.args.get('id')
     cafe_selected = db.get_or_404(Cafe, cafe_id)
-    flash("Cafe successfully updated!", "success")
 
 
     return render_template('edit.html', cafe=cafe_selected)
